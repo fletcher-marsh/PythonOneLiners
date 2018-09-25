@@ -7,7 +7,7 @@ For example, nearestWords(['cats','snarf','carts','cat','bats','cbts','abcd'],'c
 should return ['cats','bats','cbts']. There are no repeats in the wordlist.
 
 Source: Fletcher
-233 characters
+Characters: 233
 '''
 
 nearestWords = lambda l, w: list(filter(lambda x: True in [True if w in inserts else False for inserts in [[x[:i] + c + x[i+1:] for c in string.ascii_lowercase] for i in range(len(x))]], list(filter(lambda x: len(x) == len(w), l))))
